@@ -1,6 +1,11 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
 .row{
     height: 100em;
 }
 body{
     padding: 3.5em 0;
+}
+#editor{
+   font-size:large; 
+   font-family: 'Hack';
 }

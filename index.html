@@ -4,17 +4,13 @@
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <title>Hello, world!</title>
+    <title>Editor</title>
 </head>
 
 <body>
-    <!-- <h1 class="text-center display-4 ">Sublime Text 10 </h1> -->
-
     <nav id="MainNavBar" class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
         <div class="container-fluid">
             <!-- This is to make responsive nav bar -->
@@ -55,10 +51,23 @@
     </nav>
     <div id="main-area" class="container-fluid h-100">
         <div class="row " style="flex-grow:1;">
-            <div class="col-9 wf border border-success">Code Area </div>
+            <div class="editor col-9 wf border border-success"  id="editor">Code Area</div>
             <div class="col-3 wf border border-success">Test Area </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="lib/ace.js"></script>
+    <script src="lib/theme-monokai.js"></script>
+    <script src="ide.js"></script>
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
