@@ -31,32 +31,105 @@
 
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle mx-2" type="button" id="dropdownMenuButton"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Settings
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Theme</a>
-                                <a class="dropdown-item" href="#">Fontsize</a>
-                                <a class="dropdown-item" href="#">Language</a>
-                            </div>
-                        </div>
-
-                    </div>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#theme">
+                        Settings
+                    </button>
 
                 </div>
 
             </div>
-        </nav>
+
+
     </div>
-    <div id="main-area" class="container-fluid h-100">
+    </nav>
+    </div>
+    <div id="main_area" class="container-fluid fill bg-white">
         <div class="row " style="flex-grow:1;">
-            <div class="editor col-9 wf border border-success" id="editor">Code Area</div>
-            <div class="col-3 wf border border-success">Test Area </div>
+            <div class="editor col-9 wf border" id="editor">Code Area</div>
+            <div class="editor col wf border" id="editor">Test Area </div>
         </div>
     </div>
+
+
+
+    <!-- Modal -->
+    <!-- Modal -->
+    <div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labelledby="theme" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title " id="theme"><span class="display-6 text-dark">Settings</span></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="#">
+                        <div class="form-group form-inline m-2">
+                            <label for="Languageselect">Language</label>
+                            <select class="form-control" id="Languageselect">
+                                <option>cpp</option>
+                                <option>python</option>
+                                <option>java</option>
+                                <option>javascript</option>
+                                <option>php</option>
+                            </select>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="themeselect">Theme</label>
+                            <select class="form-control" id="themeselect">
+                                <option>Monokai</option>
+                                <option>VS Code Light</option>
+                                <option>VS Code Dark</option>
+                                <option>Solarized Dark</option>
+                                <option>Solarized Light</option>
+                            </select>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="fontselect">Font Size</label>
+                            <select class="form-control" id="fontselect">
+                                <option>12px</option>
+                                <option>14px</option>
+                                <option>16px</option>
+                                <option>18px</option>
+                                <option>20px</option>
+                            </select>
+                        </div>
+                        <div class="form-group m-2">
+                            <label for="fontfamilyselect">Font Family</label>
+                            <select class="form-control" id="fontfamilyselect">
+                                <option>Hack</option>
+                                <option>Sans Serif</option>
+                                <option>Ubuntu Mono</option>
+                                <option>Roboto Mono</option>
+                                <option>Courier New</option>
+                            </select>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="lib/ace.js"></script>
