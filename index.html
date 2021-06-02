@@ -11,62 +11,58 @@
 </head>
 
 <body>
-    <nav id="MainNavBar" class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
-        <div class="container-fluid">
-            <!-- This is to make responsive nav bar -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand " href="#">Sublime Text 10</a>
-            <div class="navbar-nav me-auto">
-                <div class="btn-nav mx-2"><a class="btn btn btn-small navbar-btn" style="background-color: #86dae0;"
-                        href="#">Run</a></div>
-                <div class="btn-nav mx-2"><a class="btn btn-small navbar-btn" style="background-color: #86dae0;"
-                        href="#">Parse</a></div>
-                <div class="btn-nav mx-2"><a class="btn btn-small navbar-btn" style="background-color: #86dae0;"
-                        href="#">Stress</a></div>
+    <div class="nav-container">
+        <nav id="MainNavBar" class="navbar navbar-dark bg-dark navbar-expand-md fixed-top">
+            <div class="container-fluid">
+                <!-- This is to make responsive nav bar -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand " href="#">Sublime Text 10</a>
+                <div class="navbar-nav me-auto">
+                    <div class="btn-nav mx-2"><a class="btn btn btn-small navbar-btn bg-secondary text-light"
+                            href="#">Run</a></div>
+                    <div class="btn-nav mx-2"><a class="btn btn-small navbar-btn bg-secondary text-light"
+                            href="#">Parse</a></div>
+                    <div class="btn-nav mx-2"><a class="btn btn-small navbar-btn bg-secondary text-light"
+                            href="#">Stress</a></div>
 
-            </div>
-            <div class="navbar-nav ms-auto">
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle mx-2" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Settings
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+                <div class="navbar-nav ms-auto">
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle mx-2" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Settings
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">Theme</a>
+                                <a class="dropdown-item" href="#">Fontsize</a>
+                                <a class="dropdown-item" href="#">Language</a>
+                            </div>
                         </div>
+
                     </div>
 
                 </div>
 
             </div>
-
-        </div>
-    </nav>
+        </nav>
+    </div>
     <div id="main-area" class="container-fluid h-100">
         <div class="row " style="flex-grow:1;">
-            <div class="editor col-9 wf border border-success"  id="editor">Code Area</div>
+            <div class="editor col-9 wf border border-success" id="editor">Code Area</div>
             <div class="col-3 wf border border-success">Test Area </div>
         </div>
     </div>
-
-
-
-
-
-
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="lib/ace.js"></script>
     <script src="lib/theme-monokai.js"></script>
     <script src="lib/theme-solarized_light.js"></script>
+    <script src="lib/theme-solarized_dark.js"></script>
     <script src="ide.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

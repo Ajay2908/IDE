@@ -9,3 +9,23 @@ body{
    font-size:large; 
    font-family: 'Hack';
 }
+
+/* #MainNavBar {
+    display: flex;
+    background-color: black;
+    transform: translateY(-100%);
+    transition: transform .5s cubic-bezier(.4,0,.2,1);
+}
+#MainNavBar a {
+      color: white;
+      text-decoration: none;
+}
+#MainNavBar > * {
+    padding: 1rem;
+}
+body {
+    margin: 0;
+}
+.nav-container:hover #MainNavBar {
+    transform: translateY(0);
+} */
