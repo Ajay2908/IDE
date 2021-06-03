@@ -137,7 +137,7 @@ function langSelector(lang) {
         editor.getSession().setMode(`ace/mode/${lang}`);
     });
 
-    $('#langDropDown').text(lang);
+    $('#spanLang').text(lang);
 
 
 
@@ -147,7 +147,7 @@ function themeSelector(theme) {
         editor = ace.edit(this);
         editor.setTheme(`ace/theme/${theme}`);
     });
-    $('#themeDropDown').text(theme);
+    $('#spanTheme').text(theme);
 
 
 
