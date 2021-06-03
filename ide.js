@@ -11,6 +11,12 @@ $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
     editor.getSession().setMode('ace/mode/c_cpp');
+    if (this.classList.contains('edit2')) {
+
+        editor.renderer.setShowGutter(false);
+    }
+    editor.setShowPrintMargin(false);
+
 });
 $('a[href$="#Modal"]').on("click", function () {
     $('#Modal').modal('show');
