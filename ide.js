@@ -44,7 +44,7 @@ $('.editor').each(function (index) {
         editor.renderer.setShowGutter(false);
     }
     editor.setShowPrintMargin(false);
-    
+
     if (this.classList.contains('edit1')) {
 
         editor.setValue(template);
@@ -79,6 +79,35 @@ document.addEventListener("DOMContentLoaded", function () {
         // window.addEventListener
     }
     // if
+
+});
+
+$('.dataform').submit(function (e) {
+
+    e.preventDefault();
+
+    // $(this).serialize(); will be the serialized form
+    const data = $(this).serializeArray();
+    var theme;
+    var language;
+    var font_size;
+    var font_family;
+    language = data[0].value;
+    theme = data[1].value;
+    font_size = data[2].value;
+    font_family = data[3].value;
+
+    // $(this).append(data[2].value + '<br />');
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        editor.setTheme(`ace/theme/${theme}`);
+        editor.getSession().setMode(`ace/mode/${language}`);
+        editor.setOptions({
+            fontFamily: `${font_family}`,
+            fontSize: `${font_size}`
+        });
+    });
+
 
 });
 

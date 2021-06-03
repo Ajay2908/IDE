@@ -90,69 +90,102 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title " id="theme"><span class="display-6 text-dark">Settings</span></h5>
+                    <h5 class="modal-title " id="theme"><span class="display-6 text-dark">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
+                                class="bi bi-gear" viewBox="-0.5 0 15 20">
+                                <path
+                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                                <path
+                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                            </svg>
+                            Settings</span></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        &times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
-                    <form action="#">
+                <form action="#" class="dataform">
+
+
+                    <div class="modal-body">
+
+
                         <div class="form-group form-inline m-2">
-                            <label for="Languageselect">Language</label>
-                            <select class="form-control" id="Languageselect">
-                                <option>cpp</option>
-                                <option>python</option>
-                                <option>java</option>
-                                <option>javascript</option>
-                                <option>php</option>
-                            </select>
-                        </div>
-                        <div class="form-group m-2">
-                            <label for="themeselect">Theme</label>
-                            <select class="form-control" id="themeselect">
-                                <option>Monokai</option>
-                                <option>VS Code Light</option>
-                                <option>VS Code Dark</option>
-                                <option>Solarized Dark</option>
-                                <option>Solarized Light</option>
-                            </select>
-                        </div>
-                        <div class="form-group m-2">
-                            <label for="fontselect">Font Size</label>
-                            <select class="form-control" id="fontselect">
-                                <option>12px</option>
-                                <option>14px</option>
-                                <option>16px</option>
-                                <option>18px</option>
-                                <option>20px</option>
-                            </select>
-                        </div>
-                        <div class="form-group m-2">
-                            <label for="fontfamilyselect">Font Family</label>
-                            <select class="form-control" id="fontfamilyselect">
-                                <option>Hack</option>
-                                <option>Sans Serif</option>
-                                <option>Ubuntu Mono</option>
-                                <option>Roboto Mono</option>
-                                <option>Courier New</option>
+                            <label for="Languageselect">
+                                Language</label>
+                            <select class="form-control" id="Languageselect" name="language">
+                                <option value="c_cpp">cpp</option>
+                                <option value="python">python</option>
+                                <option value="java">java</option>
+                                <option value="javascript">javascript</option>
+                                <option value="php">php</option>
                             </select>
                         </div>
 
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
+
+
+                        <div class="form-group m-2">
+                            <label for="themeselect">Theme</label>
+                            <select class="form-control" id="themeselect" name="theme">
+                                <option value="monokai">Monokai</option>
+                                <option value="eclipse">eclipse</option>
+                                <option value="github">github</option>
+                                <option value="dracula">dracula</option>
+                                <option value="solarized_dark">Solarized Dark</option>
+                                <option value="solarized_light">Solarized Light</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group m-2">
+                            <label for="fontselect">Font Size</label>
+                            <select class="form-control" id="fontselect" name="fontsize">
+                                <option value="16px">16px</option>
+                                <option value="18px">18px</option>
+                                <option value="20px">20px</option>
+                                <option value="22px">22px</option>
+                                <option value="24px">24px</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="form-group m-2">
+                            <label for="fontfamilyselect">Font Family</label>
+                            <select class="form-control" id="fontfamilyselect" name="fontfamily">
+                                <option value="Hack">Hack</option>
+                                <option value="Sans Serif">Sans Serif</option>
+                                <option value="Ubuntu Mono">Ubuntu Mono</option>
+                                <option value="Roboto Mono">Roboto Mono</option>
+                                <option value="Courier New">Courier New</option>
+                            </select>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Apply</button>
+                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">close</button>
+                    </div>
+
+                </form>
             </div>
+
         </div>
     </div>
+    </div>
+    <div id="output"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="lib/ace.js"></script>
     <script src="lib/theme-monokai.js"></script>
     <script src="lib/theme-solarized_light.js"></script>
     <script src="lib/theme-solarized_dark.js"></script>
+    <script src="lib/theme-eclipse.js"></script>
+    <script src="lib/theme-github.js"></script>
+    <script src="lib/theme-dracula.js"></script>
     <script src="ide.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
