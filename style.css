@@ -15,6 +15,7 @@ html, body {
 body{
     padding: 3.5em 0 0 0;
 }
+
 #editor{
    font-size:medium; 
    font-family: 'Hack';
