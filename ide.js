@@ -46,6 +46,10 @@ $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
     editor.getSession().setMode('ace/mode/c_cpp');
+    editor.setOption("enableBasicAutocompletion", true);
+    editor.setOption("enableSnippets", true);
+    editor.setOption("enableLiveAutocompletion", true);
+
 
 
     if (this.classList.contains('edit2')) {
