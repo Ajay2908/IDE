@@ -34,11 +34,20 @@ int32_t main() {
 }
 
 `
+$(document).ready(function () {
+    // langSelector("cpp");
+    // themeSelector("monokai");
+    // $('#langDropDown').text("cpp");
+    // $('#themeDropDown').text("monokai");
+
+});
 
 $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
     editor.getSession().setMode('ace/mode/c_cpp');
+
+
     if (this.classList.contains('edit2')) {
 
         editor.renderer.setShowGutter(false);
@@ -50,10 +59,14 @@ $('.editor').each(function (index) {
         editor.setValue(template);
     }
 
+
+
 });
+
 $('a[href$="#Modal"]').on("click", function () {
     $('#Modal').modal('show');
 });
+
 document.addEventListener("DOMContentLoaded", function () {
 
     el_autohide = document.querySelector('.autohide');
@@ -82,33 +95,64 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-$('.dataform').submit(function (e) {
+// $('.dataform').submit(function (e) {
 
-    e.preventDefault();
+//     e.preventDefault();
 
-    // $(this).serialize(); will be the serialized form
-    const data = $(this).serializeArray();
-    var theme;
-    var language;
-    var font_size;
-    var font_family;
-    language = data[0].value;
-    theme = data[1].value;
-    font_size = data[2].value;
-    font_family = data[3].value;
+//     // $(this).serialize(); will be the serialized form
+//     const data = $(this).serializeArray();
+//     var theme;
+//     var language;
+//     var font_size;
+//     var font_family;
+//     language = data[0].value;
+//     theme = data[1].value;
+//     font_size = data[2].value;
+//     font_family = data[3].value;
 
-    // $(this).append(data[2].value + '<br />');
+//     $('.editor').each(function (index) {
+//         editor = ace.edit(this);
+//         editor.setTheme(`ace/theme/${theme}`);
+//         editor.getSession().setMode(`ace/mode/${language}`);
+//         editor.setOptions({
+//             fontFamily: `${font_family}`,
+//             fontSize: `${font_size}`
+//         });
+//     });
+
+
+// });
+// $(document).ready(function () {
+//     $(".dropdown").hover(function () {
+//         var dropdownMenu = $(this).children(".dropdown-menu");
+//         if (dropdownMenu.is(":visible")) {
+//             dropdownMenu.parent().toggleClass("open");
+//         }
+//     });
+// });
+function langSelector(lang) {
+    // var lang = this.text
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        editor.getSession().setMode(`ace/mode/${lang}`);
+    });
+
+    $('#langDropDown').text(lang);
+
+
+
+}
+function themeSelector(theme) {
     $('.editor').each(function (index) {
         editor = ace.edit(this);
         editor.setTheme(`ace/theme/${theme}`);
-        editor.getSession().setMode(`ace/mode/${language}`);
-        editor.setOptions({
-            fontFamily: `${font_family}`,
-            fontSize: `${font_size}`
-        });
     });
+    $('#themeDropDown').text(theme);
 
 
-});
+
+}
+
+
 
 

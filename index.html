@@ -29,6 +29,54 @@
                     Sublime Text</a>
                 <div class="navbar-nav me-auto">
 
+                    <div class="dropdown mx-2 lang-select">
+                        <button class="btn btn-secondary dropdown-toggle text-light" type="button" id="langDropDown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-code-square" viewBox="0 0 16 16">
+                                <path
+                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+                                <path
+                                    d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z" />
+                            </svg>
+                            Language
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="langDropDown">
+                            <a class="dropdown-item" href="#" onclick='langSelector("c_cpp");'>Cpp</a>
+                            <a class="dropdown-item" href="#" onclick='langSelector("python");'>Python</a>
+                            <a class="dropdown-item" href="#" onclick='langSelector("php");'>PHP</a>
+                            <a class="dropdown-item" href="#" onclick='langSelector("java");'>Java</a>
+                            <a class="dropdown-item" href="#" onclick='langSelector("javascript");'>Javascript</a>
+                        </div>
+
+                    </div>
+
+                    <div class="dropdown mx-2 lang-select">
+                        <button class="btn text-light btn-secondary dropdown-toggle" type="button" id="themeDropDown"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                                class="bi bi-brush-fill" viewBox="0 0 16 16">
+                                <path
+                                    d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z" />
+                            </svg>
+                            Theme
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="themeDropDown">
+                            <a class="dropdown-item" href="#" onclick='themeSelector("monokai");'>monokai</a>
+                            <a class="dropdown-item" href="#" onclick='themeSelector("solarized_dark");'>solarized
+                                dark</a>
+                            <a class="dropdown-item" href="#" onclick='themeSelector("solarized_light");'>solarized
+                                light</a>
+                            <a class="dropdown-item" href="#" onclick='themeSelector("eclipse");'>eclipse</a>
+                            <a class="dropdown-item" href="#" onclick='themeSelector("dracula");'>dracula</a>
+                            <a class="dropdown-item" href="#" onclick='themeSelector("github");'>github</a>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="navbar-nav ms-auto">
+
 
                     <div class="btn-nav mx-2"><a class="btn navbar-btn text-light" style="background-color: #219ebc;"
                             href="#">
@@ -56,26 +104,13 @@
                     </div>
 
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn text-light" style="background-color: #00a6fb;" data-toggle="modal"
-                        data-target="#theme">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                            class="bi bi-gear-fill" viewBox="0 1 16 16">
-                            <path
-                                d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
-                        </svg>
-                        Settings
-                    </button>
-
-                </div>
 
             </div>
+        </nav>
 
 
     </div>
-    </nav>
-    </div>
+
     <div id="right_panel" class="container-fluid fill bg-white ">
         <div class="row" style="flex-grow:1;">
 
@@ -86,97 +121,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="theme" tabindex="-1" role="dialog" aria-labelledby="theme" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title " id="theme"><span class="display-6 text-dark">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" fill="currentColor"
-                                class="bi bi-gear" viewBox="-0.5 0 15 20">
-                                <path
-                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
-                                <path
-                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
-                            </svg>
-                            Settings</span></h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        &times;</span>
-                    </button>
-                </div>
-                <form action="#" class="dataform">
 
-
-                    <div class="modal-body">
-
-
-                        <div class="form-group form-inline m-2">
-                            <label for="Languageselect">
-                                Language</label>
-                            <select class="form-control" id="Languageselect" name="language">
-                                <option value="c_cpp">cpp</option>
-                                <option value="python">python</option>
-                                <option value="java">java</option>
-                                <option value="javascript">javascript</option>
-                                <option value="php">php</option>
-                            </select>
-                        </div>
-
-
-
-                        <div class="form-group m-2">
-                            <label for="themeselect">Theme</label>
-                            <select class="form-control" id="themeselect" name="theme">
-                                <option value="monokai">Monokai</option>
-                                <option value="eclipse">eclipse</option>
-                                <option value="github">github</option>
-                                <option value="dracula">dracula</option>
-                                <option value="solarized_dark">Solarized Dark</option>
-                                <option value="solarized_light">Solarized Light</option>
-                            </select>
-                        </div>
-
-
-
-                        <div class="form-group m-2">
-                            <label for="fontselect">Font Size</label>
-                            <select class="form-control" id="fontselect" name="fontsize">
-                                <option value="16px">16px</option>
-                                <option value="18px">18px</option>
-                                <option value="20px">20px</option>
-                                <option value="22px">22px</option>
-                                <option value="24px">24px</option>
-                            </select>
-                        </div>
-
-
-
-                        <div class="form-group m-2">
-                            <label for="fontfamilyselect">Font Family</label>
-                            <select class="form-control" id="fontfamilyselect" name="fontfamily">
-                                <option value="Hack">Hack</option>
-                                <option value="Sans Serif">Sans Serif</option>
-                                <option value="Ubuntu Mono">Ubuntu Mono</option>
-                                <option value="Roboto Mono">Roboto Mono</option>
-                                <option value="Courier New">Courier New</option>
-                            </select>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary">Apply</button>
-                        <button type="submit" class="btn btn-secondary" data-dismiss="modal">close</button>
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
     </div>
-    </div>
-    <div id="output"></div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="lib/ace.js"></script>
