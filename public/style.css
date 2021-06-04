@@ -56,4 +56,7 @@ body{
 .dropdown-menu{
     margin-top: 0;
 } */
-
+div.ace_editor.ace_autocomplete {
+    width: 40%;
+    font-size:1em;
+ }

@@ -49,21 +49,41 @@ $('.editor').each(function (index) {
     editor.getSession().setMode('ace/mode/c_cpp');
     editor.setOption("enableBasicAutocompletion", true);
     editor.setOption("enableSnippets", true);
-    editor.setOption("enableLiveAutocompletion", true);
-
-
-
-    if (this.classList.contains('edit2')) {
-
-        editor.renderer.setShowGutter(false);
-    }
+    editor.setOption("enableLiveAutocompletion", true);  
     editor.setShowPrintMargin(false);
-
     if (this.classList.contains('edit1')) {
-
-        editor.setValue(template);
+    
+        const data = $.ajax({
+            type: "get",
+            url: '/getcode',
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(tosend),
+            success: function (response) {
+                console.log(response, status)
+            },
+            error: function (result, status) {
+                console.log(result, status)
+            }
+        })
     }
+    else {
+        editor.renderer.setShowGutter(false);
+        const data =  $.ajax({
+            type: "get",
+            url: '/getinput',
+            contentType: "application/json",
+            dataType: "json",
+            data: JSON.stringify(tosend),
+            success: function (response) {
+                console.log(response, status)
+            },
+            error: function (result, status) {
+                console.log(result, status)
+            }
+        })
 
+    }
 
 
 });
@@ -205,6 +225,7 @@ function executecode() {
     });
 
 }
+setInterval(executecode(),1000);
 
 
 
