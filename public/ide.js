@@ -49,39 +49,53 @@ $('.editor').each(function (index) {
     editor.getSession().setMode('ace/mode/c_cpp');
     editor.setOption("enableBasicAutocompletion", true);
     editor.setOption("enableSnippets", true);
-    editor.setOption("enableLiveAutocompletion", true);  
+    editor.setOption("enableLiveAutocompletion", true);
     editor.setShowPrintMargin(false);
+
+
     if (this.classList.contains('edit1')) {
-    
-        const data = $.ajax({
+        // alert('editor 1')
+        let result;
+        $.ajax({
             type: "get",
             url: '/getcode',
+            async: false,
             contentType: "application/json",
             dataType: "json",
-            data: JSON.stringify(tosend),
             success: function (response) {
-                console.log(response, status)
+                result = response['data'];
+                console.log(result)
             },
-            error: function (result, status) {
-                console.log(result, status)
+            error: function (result) {
+                console.log(result)
             }
         })
+        // console.log(result);
+        editor.setValue(result);
+        editor.clearSelection();
     }
     else {
+        // alert('editor 2')
         editor.renderer.setShowGutter(false);
-        const data =  $.ajax({
+        let result;
+
+        $.ajax({
             type: "get",
             url: '/getinput',
+            async: false,
             contentType: "application/json",
             dataType: "json",
-            data: JSON.stringify(tosend),
             success: function (response) {
-                console.log(response, status)
+                result = response['data'];
+                console.log(result)
             },
-            error: function (result, status) {
-                console.log(result, status)
+            error: function (result) {
+                console.log(result)
             }
         })
+        // console.log(result)
+        editor.setValue(result);
+        editor.clearSelection();
 
     }
 
@@ -114,47 +128,11 @@ document.addEventListener("DOMContentLoaded", function () {
             }
             last_scroll_top = scroll_top;
         });
-        // window.addEventListener
     }
-    // if
+
 
 });
 
-// $('.dataform').submit(function (e) {
-
-//     e.preventDefault();
-
-//     // $(this).serialize(); will be the serialized form
-//     const data = $(this).serializeArray();
-//     var theme;
-//     var language;
-//     var font_size;
-//     var font_family;
-//     language = data[0].value;
-//     theme = data[1].value;
-//     font_size = data[2].value;
-//     font_family = data[3].value;
-
-//     $('.editor').each(function (index) {
-//         editor = ace.edit(this);
-//         editor.setTheme(`ace/theme/${theme}`);
-//         editor.getSession().setMode(`ace/mode/${language}`);
-//         editor.setOptions({
-//             fontFamily: `${font_family}`,
-//             fontSize: `${font_size}`
-//         });
-//     });
-
-
-// });
-// $(document).ready(function () {
-//     $(".dropdown").hover(function () {
-//         var dropdownMenu = $(this).children(".dropdown-menu");
-//         if (dropdownMenu.is(":visible")) {
-//             dropdownMenu.parent().toggleClass("open");
-//         }
-//     });
-// });
 function langSelector(lang) {
     // var lang = this.text
     $('.editor').each(function (index) {
@@ -178,7 +156,7 @@ function themeSelector(theme) {
 
 }
 
-function executecode() {
+function saveCode() {
     $('.editor').each(function (index) {
         editor = ace.edit(this);
         const code = editor.getSession().getValue();
@@ -225,7 +203,7 @@ function executecode() {
     });
 
 }
-setInterval(executecode(),1000);
+
 
 
 
