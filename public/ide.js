@@ -1,5 +1,6 @@
 let editor;
 
+
 let template = `#include <bits/stdc++.h>
 using namespace std;
 #ifdef LOCAL
@@ -159,15 +160,27 @@ function themeSelector(theme) {
 
 
 function executecode() {
-    $('.editor').each(function (index) {
-        editor = ace.edit(this);
-        const data = editor.getSession().getValue();
+    // $('.editor').each(function (index) {
+    //     editor = ace.edit(this);
+    //     const data = editor.getSession().getValue();
+    alert('Hello')
+    $.ajax({
+        async: true,
+        type: "POST",
+        url: 'localhost:5000/savecode',
+        data: {
+            code: "Hello from original",
+        },
 
-
-
-
-
-    });
+        success: function (response) {
+            alert(response);
+        },
+        error: function (result) {
+            alert(result)
+        }
+    })
+    alert('Bye')
+    return false;
 
 }
 
