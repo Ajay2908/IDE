@@ -158,5 +158,18 @@ function themeSelector(theme) {
 }
 
 
+function executecode(){
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        const data = editor.getSession().getValue();
+        
+        
+    
+    
+    });
+
+}
+
+
 
 
