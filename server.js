@@ -10,12 +10,13 @@ app.use(express.static('./public'))
 
 
 app.post('/savecode',(req,res)=>{
-    console.log("hello")
-    fs.writeFileSync('/mnt/d/A.cpp',req.body.code);
-    console.log('success!');
-    console.log(req.body)
+    fs.writeFileSync('/mnt/d/A.cpp',req.body['data']);
     res.end();
     
+})
+app.post('/saveinput',(req,res)=>{
+    fs.writeFileSync('/mnt/d/A.txt',req.body['data']);
+    res.end();
 })
 
 app.listen(5000,()=>{

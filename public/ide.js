@@ -158,29 +158,51 @@ function themeSelector(theme) {
 
 }
 
-
 function executecode() {
-    // $('.editor').each(function (index) {
-    //     editor = ace.edit(this);
-    //     const data = editor.getSession().getValue();
-    alert('Hello')
-    $.ajax({
-        async: true,
-        type: "POST",
-        url: 'localhost:5000/savecode',
-        data: {
-            code: "Hello from original",
-        },
-
-        success: function (response) {
-            alert(response);
-        },
-        error: function (result) {
-            alert(result)
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        const code = editor.getSession().getValue();
+        if (this.classList.contains('edit1')) {
+            const tosend = {
+                data: code
+            }
+            $.ajax({
+                type: "post",
+                url: '/savecode',
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(tosend),
+                success: function (response) {
+                    console.log(response, status)
+                },
+                error: function (result, status) {
+                    console.log(result, status)
+                }
+            })
         }
-    })
-    alert('Bye')
-    return false;
+        else {
+            const tosend = {
+                data: code
+            }
+            $.ajax({
+                type: "post",
+                url: '/saveinput',
+                contentType: "application/json",
+                dataType: "json",
+                data: JSON.stringify(tosend),
+                success: function (response) {
+                    console.log(response, status)
+                },
+                error: function (result, status) {
+                    console.log(result, status)
+                }
+            })
+
+        }
+
+
+
+    });
 
 }
 
