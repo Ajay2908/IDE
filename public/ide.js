@@ -40,7 +40,7 @@ $(document).ready(function () {
     // themeSelector("monokai");
     // $('#langDropDown').text("cpp");
     // $('#themeDropDown').text("monokai");
-    
+
 
 });
 
@@ -48,9 +48,7 @@ $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
     editor.getSession().setMode('ace/mode/c_cpp');
-    editor.setOption("enableBasicAutocompletion", true);
-    editor.setOption("enableSnippets", true);
-    editor.setOption("enableLiveAutocompletion", true);
+
     editor.setShowPrintMargin(false);
 
 
@@ -71,11 +69,14 @@ $('.editor').each(function (index) {
                 console.log(result)
             }
         })
+        editor.setOption("enableBasicAutocompletion", true);
+        editor.setOption("enableSnippets", true);
+        editor.setOption("enableLiveAutocompletion", true);
         // console.log(result);
         editor.setValue(result);
         editor.clearSelection();
     }
-    else {
+    else if (this.classList.contains('edit2')) {
         // alert('editor 2')
         editor.renderer.setShowGutter(false);
         let result;
@@ -97,6 +98,13 @@ $('.editor').each(function (index) {
         // console.log(result)
         editor.setValue(result);
         editor.clearSelection();
+
+    }
+    else {
+        editor.renderer.setShowGutter(false);
+        editor.setValue("");
+        editor.clearSelection();
+
 
     }
 
@@ -180,7 +188,7 @@ function saveCode() {
                 }
             })
         }
-        else {
+        else if (this.classList.contains('edit2')) {
             const tosend = {
                 data: code
             }
@@ -208,7 +216,29 @@ function runCode() {
     element.innerHTML = `<div class="spinner-border text-warning text-left" role="status">
     <span class="sr-only"></span>
   </div>`
-
+    let result;
+    $.ajax({
+        type: "get",
+        url: '/run',
+        async: false,
+        contentType: "application/json",
+        dataType: "json",
+        success: function (response) {
+            result = response['success'];
+            console.log(result)
+        },
+        error: function (result) {
+            console.log(result)
+            result = "Something went wrong"
+        }
+    })
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        if (this.classList.contains('edit3')) {
+            editor.setValue(result);
+            editor.clearSelection();
+        }
+    });
     setTimeout(function () {
         element.innerHTML =
             `<div class="btn-nav mx-2" id="Runbuttonspin" ><a class="btn navbar-btn text-light" onclick="runCode();" style="background-color: #2a9d8f;"
