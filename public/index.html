@@ -30,7 +30,7 @@
                 <div class="navbar-nav me-auto">
 
                     <div class="dropdown mx-2 lang-select">
-                        <button class="btn btn-secondary dropdown-toggle text-light" type="button" id="langDropDown"
+                        <button class="btn btn-dark dropdown-toggle text-light" type="button" id="langDropDown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-code-square" viewBox="0 0 16 16">
@@ -41,18 +41,18 @@
                             </svg>
                             <span id="spanLang">Language</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="langDropDown">
-                            <a class="dropdown-item" href="#" onclick='langSelector("c_cpp");'>Cpp</a>
-                            <a class="dropdown-item" href="#" onclick='langSelector("python");'>Python</a>
-                            <a class="dropdown-item" href="#" onclick='langSelector("php");'>PHP</a>
-                            <a class="dropdown-item" href="#" onclick='langSelector("java");'>Java</a>
-                            <a class="dropdown-item" href="#" onclick='langSelector("javascript");'>Javascript</a>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="langDropDown">
+                            <a class="dropdown-item text-light"  href="#" onclick='langSelector("c_cpp");'>Cpp</a>
+                            <a class="dropdown-item text-light" href="#" onclick='langSelector("python");'>Python</a>
+                            <a class="dropdown-item text-light" href="#" onclick='langSelector("php");'>PHP</a>
+                            <a class="dropdown-item text-light" href="#" onclick='langSelector("java");'>Java</a>
+                            <a class="dropdown-item text-light" href="#" onclick='langSelector("javascript");'>Javascript</a>
                         </div>
 
                     </div>
 
                     <div class="dropdown mx-2 lang-select">
-                        <button class="btn text-light btn-secondary dropdown-toggle" type="button" id="themeDropDown"
+                        <button class="btn text-light btn-dark dropdown-toggle" type="button" id="themeDropDown"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                 class="bi bi-brush-fill" viewBox="0 0 16 16">
@@ -61,15 +61,15 @@
                             </svg>
                             <span id="spanTheme">Theme</span>
                         </button>
-                        <div class="dropdown-menu" aria-labelledby="themeDropDown">
-                            <a class="dropdown-item" href="#" onclick='themeSelector("monokai");'>monokai</a>
-                            <a class="dropdown-item" href="#" onclick='themeSelector("solarized_dark");'>solarized
-                                dark</a>
-                            <a class="dropdown-item" href="#" onclick='themeSelector("solarized_light");'>solarized
-                                light</a>
-                            <a class="dropdown-item" href="#" onclick='themeSelector("eclipse");'>eclipse</a>
-                            <a class="dropdown-item" href="#" onclick='themeSelector("dracula");'>dracula</a>
-                            <a class="dropdown-item" href="#" onclick='themeSelector("github");'>github</a>
+                        <div class="dropdown-menu bg-dark " aria-labelledby="themeDropDown">
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("monokai");'>Monokai</a>
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("solarized_dark");'>Solarized
+                                Dark</a>
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("solarized_light");'>Solarized
+                                Light</a>
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("eclipse");'>Eclipse</a>
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("dracula");'>Dracula</a>
+                            <a class="dropdown-item text-light" href="#" onclick='themeSelector("github");'>Github</a>
                         </div>
 
                     </div>
@@ -89,14 +89,14 @@
 
 
                     <div class="btn-nav mx-2" id="Runbuttonspin"><a class="btn navbar-btn text-light"
-                            onclick="runCode();showmsg();" style="background-color: #2a9d8f;" href="#">
+                            onclick="runCode();" style="background-color: #2a9d8f;" href="#">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
                                 class="bi bi-braces " viewBox="1 1 16 16">
                                 <path
                                     d="M2.114 8.063V7.9c1.005-.102 1.497-.615 1.497-1.6V4.503c0-1.094.39-1.538 1.354-1.538h.273V2h-.376C3.25 2 2.49 2.759 2.49 4.352v1.524c0 1.094-.376 1.456-1.49 1.456v1.299c1.114 0 1.49.362 1.49 1.456v1.524c0 1.593.759 2.352 2.372 2.352h.376v-.964h-.273c-.964 0-1.354-.444-1.354-1.538V9.663c0-.984-.492-1.497-1.497-1.6zM13.886 7.9v.163c-1.005.103-1.497.616-1.497 1.6v1.798c0 1.094-.39 1.538-1.354 1.538h-.273v.964h.376c1.613 0 2.372-.759 2.372-2.352v-1.524c0-1.094.376-1.456 1.49-1.456V7.332c-1.114 0-1.49-.362-1.49-1.456V4.352C13.51 2.759 12.75 2 11.138 2h-.376v.964h.273c.964 0 1.354.444 1.354 1.538V6.3c0 .984.492 1.497 1.497 1.6z" />
                             </svg>
                             <span id="Running">Run</span>
-                            </a></div>
+                        </a></div>
 
                     <div class="btn-nav mx-2"><a class="btn navbar-btn  text-light" style="background-color: #ff9e00;"
                             href="#">
@@ -115,19 +115,19 @@
 
     </div>
 
-    <div id="snackbar">Compilation done</div>
+    <div id="snackbar">Compilation done!</div>
 
     <div id="right_panel" class="container-fluid fill wrapper" style="background-color: #353535;">
         <div class="row" style="flex-grow:1;">
             <div class="editor col-8 wf edit1 box" id="editor"></div>
-            <div class="handler"></div>
+            <div class="handler" id="small"></div>
 
             <div class="col wf " id="testing">
-                <div class="text-light box" id = "inputs" >Input</div>
+                <div class="text-light box disable-select" id="inputs">Input</div>
                 <div class="editor row edit2" style="flex-grow:1;" id="editor">
                     <div class="col"></div>
                 </div>
-                <div class="text-light" id="outputs">Output</div>
+                <div class="text-light disable-select" id="outputs">Output</div>
                 <div class="editor row edit3" style="flex-grow:1;" id="editor">
                     <div class="col"></div>
                 </div>

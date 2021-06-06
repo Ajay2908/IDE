@@ -12,6 +12,9 @@ html, body {
     height: 100%;
     min-height: 100%;
 }
+#small{
+  --bs-gutter-x: 0.2rem !important;
+}
 body{
     padding: 3.5em 0 0 0;
 }
@@ -82,7 +85,7 @@ body {
     display: flex;
   }
   
-  .box {
+  /* .box { */
   
     /* border-radius: 15px; */
     /* padding: 20px; */
@@ -92,13 +95,29 @@ body {
     /* box-sizing: border-box; */
     
     /* Allow box to grow and shrink, and ensure they are all equally sized */
-    flex: 1 1 auto;
-  }
+    /* flex: 1 1 auto; */
+  /* } */
+  .disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+div.ace_scrollbar.ace_scrollbar-v{
+  user-select: none; /* supported by Chrome and Opera */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+
+}
   
   .handler {
     width: 10px;
     /* padding: 0; */
     cursor: ew-resize;
+    /* z-index: -1; */
     /* flex: 0 0 auto; */
   }
   
@@ -112,16 +131,16 @@ body {
   } */
   #snackbar {
     visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 100px; /* Set a default minimum width */
+    min-width: 300px; /* Set a default minimum width */
     margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: rgb(34, 33, 33); /* Black background color */
-    color: #fff; /* White text color */
+    background-color:white; /* Black background color */
+    color: black; /* White text color */
     text-align: center; /* Centered text */
     border-radius: 5px; /* Rounded borders */
     padding: 11px; /* Padding */
     position: fixed; /* Sit on top of the screen */
     z-index: 1; /* Add a z-index if needed */
-    left: 92%; /* Center the snackbar */
+    left: 87%; /* Center the snackbar */
     bottom: 10px; /* 30px from the bottom */
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
@@ -155,3 +174,9 @@ body {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
   }
+
+/* #colourchange:hover{
+  background-color: #0d6efd;
+
+} */
+.dropdown-item:hover {background-color: #0d6efd;}

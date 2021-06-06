@@ -47,13 +47,15 @@ $(document).ready(function () {
 $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
-    editor.getSession().setMode('ace/mode/c_cpp');
+    editor.setHighlightActiveLine(false);
 
     editor.setShowPrintMargin(false);
 
 
     if (this.classList.contains('edit1')) {
         // alert('editor 1')
+        editor.getSession().setMode('ace/mode/c_cpp');
+
         let result;
         $.ajax({
             type: "get",
@@ -78,6 +80,7 @@ $('.editor').each(function (index) {
     }
     else if (this.classList.contains('edit2')) {
         // alert('editor 2')
+        editor.getSession().setMode('ace/mode/txt');
         editor.renderer.setShowGutter(false);
         let result;
 
@@ -101,6 +104,8 @@ $('.editor').each(function (index) {
 
     }
     else {
+        editor.getSession().setMode('ace/mode/txt');
+
         editor.renderer.setShowGutter(false);
         editor.setValue("");
         editor.clearSelection();
@@ -232,17 +237,21 @@ function runCode() {
             result = "Something went wrong"
         }
     })
+
     setTimeout(function () {
         $('.editor').each(function (index) {
             editor = ace.edit(this);
             if (this.classList.contains('edit3')) {
                 editor.setValue(result);
                 editor.clearSelection();
+
             }
         });
-      
+
         element.textContent = "Run";
+        showmsg();
     }, 1000)
+
 
 
 
@@ -250,52 +259,53 @@ function runCode() {
 function showmsg() {
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-  }
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 3000);
+}
 
 var handler = document.querySelector('.handler');
 var wrapper = handler.closest('.wrapper');
 var boxA = wrapper.querySelector('.box');
 var isHandlerDragging = false;
 
-document.addEventListener('mousedown', function(e) {
-  // If mousedown event is fired from .handler, toggle flag to true
-  if (e.target === handler) {
-    isHandlerDragging = true;
-  }
+document.addEventListener('mousedown', function (e) {
+    // If mousedown event is fired from .handler, toggle flag to true
+    if (e.target === handler) {
+        isHandlerDragging = true;
+    }
 });
 
-document.addEventListener('mousemove', function(e) {
-  // Don't do anything if dragging flag is false
-  if (!isHandlerDragging) {
-    return false;
-  }
+document.addEventListener('mousemove', function (e) {
+    // Don't do anything if dragging flag is false
+    if (!isHandlerDragging) {
+        return false;
+    }
 
-  // Get offset
-  var containerOffsetLeft = wrapper.offsetLeft;
+    // Get offset
+    var containerOffsetLeft = wrapper.offsetLeft;
 
-  // Get x-coordinate of pointer relative to container
-  var pointerRelativeXpos = e.clientX - containerOffsetLeft;
-  
-  // Arbitrary minimum width set on box A, otherwise its inner content will collapse to width of 0
-  var boxAminWidth = 60;
+    // Get x-coordinate of pointer relative to container
+    var pointerRelativeXpos = e.clientX - containerOffsetLeft;
 
-  // Resize box A
-  // * 8px is the left/right spacing between .handler and its inner pseudo-element
-  // * Set flex-grow to 0 to prevent it from growing
-  boxA.style.width = (Math.max(boxAminWidth, pointerRelativeXpos - 8)) + 'px';
-  boxA.style.flexGrow = 0;
+    // Arbitrary minimum width set on box A, otherwise its inner content will collapse to width of 0
+    var boxAminWidth = 60;
+
+    // Resize box A
+    // * 8px is the left/right spacing between .handler and its inner pseudo-element
+    // * Set flex-grow to 0 to prevent it from growing
+    boxA.style.width = (Math.max(boxAminWidth, pointerRelativeXpos - 8)) + 'px';
+    boxA.style.flexGrow = 0;
 });
 
-document.addEventListener('mouseup', function(e) {
-  // Turn off dragging flag when user mouse is up
-  isHandlerDragging = false;
+document.addEventListener('mouseup', function (e) {
+    // Turn off dragging flag when user mouse is up
+    isHandlerDragging = false;
 });
 
-function myFunction() { 
-	document.getElementById("mainFrameOne").style.display="none"; 
-	document.getElementById("mainFrameTwo").style.display="block"; 
+function myFunction() {
+    document.getElementById("mainFrameOne").style.display = "none";
+    document.getElementById("mainFrameTwo").style.display = "block";
 }
+
 
 
 
