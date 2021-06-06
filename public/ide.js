@@ -285,6 +285,11 @@ document.addEventListener('mouseup', function(e) {
   isHandlerDragging = false;
 });
 
+function myFunction() { 
+	document.getElementById("mainFrameOne").style.display="none"; 
+	document.getElementById("mainFrameTwo").style.display="block"; 
+}
+
 
 
 
