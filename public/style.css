@@ -74,3 +74,31 @@ div.ace_editor.ace_autocomplete {
     font-family: 'Hack';
 
 }
+body {
+    margin: 0px;
+  }
+  
+  .wrapper {
+    display: flex;
+  }
+  
+  .box {
+  
+    flex: 1 1 auto;
+  }
+  
+  .handler {
+    width: 10px;
+   
+    cursor: ew-resize;
+    flex: 0 0 auto;
+  }
+  
+  .handler::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 100%;
+    
+    margin: 0 auto;
+  }
