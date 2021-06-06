@@ -240,12 +240,19 @@ function runCode() {
                 editor.clearSelection();
             }
         });
+      
         element.textContent = "Run";
     }, 1000)
 
 
 
 }
+function showmsg() {
+    var x = document.getElementById("snackbar");
+    x.className = "show";
+    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  }
+
 var handler = document.querySelector('.handler');
 var wrapper = handler.closest('.wrapper');
 var boxA = wrapper.querySelector('.box');
