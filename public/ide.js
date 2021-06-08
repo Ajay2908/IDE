@@ -50,11 +50,12 @@ $('.editor').each(function (index) {
     editor.setHighlightActiveLine(false);
 
     editor.setShowPrintMargin(false);
+    editor.getSession().setMode('ace/mode/c_cpp');
+
 
 
     if (this.classList.contains('edit1')) {
         // alert('editor 1')
-        editor.getSession().setMode('ace/mode/c_cpp');
 
         let result;
         $.ajax({
@@ -80,7 +81,7 @@ $('.editor').each(function (index) {
     }
     else if (this.classList.contains('edit2')) {
         // alert('editor 2')
-        editor.getSession().setMode('ace/mode/txt');
+
         editor.renderer.setShowGutter(false);
         let result;
 
@@ -104,7 +105,7 @@ $('.editor').each(function (index) {
 
     }
     else {
-        editor.getSession().setMode('ace/mode/txt');
+
 
         editor.renderer.setShowGutter(false);
         editor.setValue("");
