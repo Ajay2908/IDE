@@ -176,11 +176,10 @@ function saveCode() {
     $('.editor').each(function (index) {
         editor = ace.edit(this);
         const code = editor.getSession().getValue();
-        const mode = editor.getSession().getMode();
+    
         if (this.classList.contains('edit1')) {
             const tosend = {
                 data: code,
-                mode: mode
             }
             $.ajax({
                 type: "post",
