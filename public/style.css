@@ -21,7 +21,7 @@ body{
 
 #editor{
    font-size:small; 
-   font-family: 'Hack';
+   font-family: monospace !important;
 }
 
 ::-webkit-scrollbar {
