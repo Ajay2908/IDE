@@ -42,7 +42,7 @@ app.get('/run/:mode', (req, res) => {
     if (language === 'cpp') {
         let output;
         try {
-            output = execSync("/app/.apt/usr/bin/g++ -DLOCAL -std=c++17 A.cpp -o A && ./A < A.txt 2>&1", { cwd: current_path, timeout: 5000 }).toString();
+            output = execSync("g++ -DLOCAL -std=c++17 A.cpp -o A && ./A < A.txt 2>&1", { cwd: current_path, timeout: 5000 }).toString();
             res.json({ success: output });
         }
         catch (e) {
