@@ -34,6 +34,6 @@ jobs:
       with:
         app-name: online-ide
         slot-name: Production
-        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AE81CD08C1334035860BB0D704762046 }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8B58C6A02F9C4878AD41BB7B81AEDE44 }}
         package: .
 
