@@ -19,7 +19,7 @@ Navigate to the root of repo and run
 ```bash
 npm install
 ```
-This web app uses cpp python3 and java 11 compilers. So make sure to have all of these installed.
+This web app uses cpp , python and java compilers. So make sure to have all of these installed.
 ### g++
 ```bash
 sudo apt install g++
