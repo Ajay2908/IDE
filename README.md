@@ -30,7 +30,7 @@ sudo apt install python3.8
 ```
 ### java 11
 ```bash
-sudo apt openjdk-11-jdk-headless
+sudo apt install openjdk-11-jdk-headless
 ```
 
 ## Starting the server
