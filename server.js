@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use(express.static('./public'))
 
-
+const PORT = process.env.PORT || 5000;
 app.post('/savecode/:mode', (req, res) => {
     const language = req.params.mode;
     const current_path = path.resolve(__dirname, 'runners', language, `A.${language}`);
@@ -76,6 +76,6 @@ app.get('/run/:mode', (req, res) => {
 })
 
 
-app.listen(5000, () => {
+app.listen(PORT, () => {
     console.log("Listening to 5000");
 })
