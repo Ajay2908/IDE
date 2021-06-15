@@ -1,5 +1,5 @@
 let editor;
-
+var element = document.getElementById("Running");
 $('.editor').each(function (index) {
     editor = ace.edit(this);
     editor.setTheme('ace/theme/monokai');
@@ -190,10 +190,8 @@ function saveCode() {
 
 }
 function runCode() {
-    var element = document.getElementById("Running");
     element.textContent = "Compiling.."
     const lang = saveCode();
-
     let result;
     $.ajax({
         type: "get",
@@ -211,17 +209,17 @@ function runCode() {
         }
     })
 
-    setTimeout(function () {
-        $('.editor').each(function (index) {
-            editor = ace.edit(this);
-            if (this.classList.contains('edit3')) {
-                editor.setValue(result);
-                editor.clearSelection();
-            }
-        });
-        element.textContent = "Run";
-        showmsg();
-    }, 1000)
+    // setTimeout(function () {
+    $('.editor').each(function (index) {
+        editor = ace.edit(this);
+        if (this.classList.contains('edit3')) {
+            editor.setValue(result);
+            editor.clearSelection();
+        }
+    });
+    element.textContent = "Run";
+    showmsg();
+    // }, 1000)
 }
 
 
@@ -229,7 +227,7 @@ function runCode() {
 function showmsg() {
     var x = document.getElementById("snackbar");
     x.className = "show";
-    setTimeout(function () { x.className = x.className.replace("show", ""); }, 2000);
+    setTimeout(function () { x.className = x.className.replace("show", ""); }, 1000);
 }
 
 
