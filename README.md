@@ -13,7 +13,7 @@ git clone https://github.com/Ajay2908/IDE.git
 
 ## Dependencies
 
-navigate to the root of repo and run 
+Navigate to the root of repo and run 
 
 ```bash
 npm install
