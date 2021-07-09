@@ -1,7 +1,7 @@
 # IDE
 
 An user-friendly online IDE for competitive programming with auto complete features<br/>
-Currently supporting languages cpp, python, Java.<br/>
+It currently supports cpp, python, Java.<br/>
 
 
 ## Installation
