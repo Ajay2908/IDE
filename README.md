@@ -1,6 +1,6 @@
 # IDE
 
-An user-friendly online IDE for competitive programming with auto complete features<br/>
+A user-friendly online text editor for competitive programming with auto complete features<br/>
 It currently supports cpp, python, Java.<br/>
 
 
